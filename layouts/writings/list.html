@@ -1,0 +1,62 @@
+{{ define "main" }}
+<main class="stone-path" data-testid="stone-path-page">
+  <div class="stone-path__container">
+
+    {{/* Topic discovery: show topics with 3+ posts */}}
+    {{ $allTopics := .Site.Taxonomies.topics }}
+    {{ $visibleTopics := slice }}
+    {{ range $name, $pages := $allTopics }}
+      {{ if ge (len $pages) 3 }}
+        {{ $visibleTopics = $visibleTopics | append $name }}
+      {{ end }}
+    {{ end }}
+    {{ if gt (len $visibleTopics) 0 }}
+    <nav class="stone-path__topics" data-testid="stone-path-topics" aria-label="Filter by topic">
+      {{ range $visibleTopics }}
+        <a href="{{ "/topics/" }}{{ . | urlize }}/" class="stone-path__topic">{{ . }}</a>
+      {{ end }}
+    </nav>
+    {{ end }}
+
+    {{/* Pagination: "Walk deeper" link for older pages (at top, since newest is at bottom) */}}
+    {{ $paginator := .Paginate .Pages.ByDate 10 }}
+    {{ if $paginator.HasNext }}
+    <nav class="stone-path__deeper" data-testid="stone-path-deeper">
+      <a href="{{ $paginator.Next.URL }}" class="stone-path__deeper-link">Walk deeper</a>
+    </nav>
+    {{ end }}
+
+    {{/* Empty state */}}
+    {{ if eq (len $paginator.Pages) 0 }}
+    <p class="stone-path__empty" data-testid="stone-path-empty">The path is forming. Return soon.</p>
+    {{ else }}
+
+    {{/* Stones: ordered with newest at bottom via .ByDate (oldest first) */}}
+    <div class="stone-path__stones" data-testid="stone-path-stones">
+      {{ range $paginator.Pages.ByDate }}
+      <a href="{{ .RelPermalink }}" class="stone-path__stone" data-testid="stone-path-stone">
+        <h2 class="stone-path__stone-title">{{ .Title }}</h2>
+        <time class="stone-path__stone-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        {{ with .Description }}
+        <p class="stone-path__stone-opening">{{ . }}</p>
+        {{ end }}
+      </a>
+      {{ end }}
+    </div>
+
+    {{ end }}
+
+    {{/* Return to the clearing */}}
+    <nav class="stone-path__return" aria-label="Back to the clearing">
+      <a href="/home/" class="stone-path__return-link" data-testid="stone-path-return">Return to the clearing</a>
+    </nav>
+
+  </div>
+</main>
+
+{{/* Stone path perspective JS */}}
+{{ $stonejs := resources.Get "js/stone-path.js" }}
+{{ if $stonejs }}
+  <script src="{{ $stonejs.RelPermalink }}" defer></script>
+{{ end }}
+{{ end }}

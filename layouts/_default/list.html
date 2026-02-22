@@ -1,0 +1,34 @@
+{{ define "main" }}
+<article class="writing" data-testid="section-page">
+  <div class="writing__container">
+
+    <h1 class="writing__title">{{ .Title }}</h1>
+
+    {{ if .Content }}
+    <div class="writing__content prose prose-lg">
+      {{ .Content }}
+    </div>
+    {{ end }}
+
+    {{ $pages := .Pages }}
+    {{ if gt (len $pages) 0 }}
+    <div class="stone-path__stones" style="margin-top: 2rem;">
+      {{ range $pages.ByDate }}
+      <a href="{{ .RelPermalink }}" class="stone-path__stone">
+        <h2 class="stone-path__stone-title">{{ .Title }}</h2>
+        <time class="stone-path__stone-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        {{ with .Description }}
+        <p class="stone-path__stone-opening">{{ . }}</p>
+        {{ end }}
+      </a>
+      {{ end }}
+    </div>
+    {{ else if not .Content }}
+    <p class="stone-path__empty">The path is forming. Return soon.</p>
+    {{ end }}
+
+    {{ partial "return-nav.html" (dict "text" "Return to the clearing" "href" "/home/" "testid" "section-return") }}
+
+  </div>
+</article>
+{{ end }}

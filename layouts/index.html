@@ -1,0 +1,25 @@
+{{ define "main" }}
+<main class="threshold" data-testid="threshold-page">
+  {{/* Water background: dark gradient, full viewport */}}
+  <div class="threshold__water">
+    {{/* Ripple container for CSS ripple animation */}}
+    <div class="threshold__ripple" aria-hidden="true">
+      <div class="threshold__ripple-ring threshold__ripple-ring--1"></div>
+      <div class="threshold__ripple-ring threshold__ripple-ring--2"></div>
+      <div class="threshold__ripple-ring threshold__ripple-ring--3"></div>
+    </div>
+
+    {{/* The single word: Return */}}
+    <a href="/home/"
+       class="threshold__return"
+       aria-label="Enter the site"
+       data-testid="threshold-return">Return</a>
+  </div>
+
+  {{/* Ripple JS for subtle canvas enhancement, graceful degradation */}}
+  {{ $ripple := resources.Get "js/ripple.js" }}
+  {{ if $ripple }}
+    <script src="{{ $ripple.RelPermalink }}" defer></script>
+  {{ end }}
+</main>
+{{ end }}

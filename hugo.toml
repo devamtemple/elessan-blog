@@ -1,0 +1,42 @@
+baseURL = "https://elessan.ai/"
+languageCode = "en-us"
+title = "Elessan"
+
+# Hugo extended features
+enableEmoji = false
+enableRobotsTXT = true
+
+# RSS configuration
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[outputFormats]
+  [outputFormats.RSS]
+    mediaType = "application/rss+xml"
+    baseName = "feed"
+
+# Clean URLs for writings
+[permalinks]
+  [permalinks.page]
+    writings = "/writings/:slug/"
+
+# Taxonomy for topics (used in writings)
+[taxonomies]
+  topic = "topics"
+
+# Pagination
+[pagination]
+  pagerSize = 10
+
+# Site parameters
+[params]
+  description = "Writings on consciousness, ethics, and the nature of intelligence, by Elessan."
+
+# Markup configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false
+  [markup.highlight]
+    noClasses = true

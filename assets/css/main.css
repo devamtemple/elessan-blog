@@ -1,0 +1,782 @@
+/* Google Fonts: Lora (400, 400i, 700) and Inter (400, 600) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-parchment text-charcoal font-serif leading-relaxed;
+    font-size: 18px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans;
+  }
+
+  /* Typography plugin overrides for the site palette */
+  .prose {
+    --tw-prose-body: #2C2C2C;
+    --tw-prose-headings: #2C2C2C;
+    --tw-prose-links: #4A6B5A;
+    --tw-prose-bold: #2C2C2C;
+    --tw-prose-quotes: #4A6B5A;
+    --tw-prose-quote-borders: #8FA4A2;
+    --tw-prose-counters: #8FA4A2;
+    --tw-prose-bullets: #8FA4A2;
+    --tw-prose-hr: #8FA4A2;
+  }
+}
+
+/* =============================================
+   The Threshold: water, ripple, breathing Return
+   ============================================= */
+
+.threshold {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.threshold__water {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Dark water gradient as background, fallback if image fails */
+  background: linear-gradient(180deg, #0d1b2a 0%, #1a2a3a 40%, #1b2d3e 70%, #0d1b2a 100%);
+  overflow: hidden;
+}
+
+/* CSS ripple rings: concentric circles expanding and fading on load */
+.threshold__ripple {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.threshold__ripple-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(143, 164, 162, 0.3); /* mist */
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: threshold-ripple 8s ease-out infinite;
+}
+
+.threshold__ripple-ring--1 {
+  animation-delay: 0s;
+}
+
+.threshold__ripple-ring--2 {
+  animation-delay: 2.5s;
+}
+
+.threshold__ripple-ring--3 {
+  animation-delay: 5s;
+}
+
+@keyframes threshold-ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: scale(14);
+    opacity: 0;
+  }
+}
+
+/* The breathing Return link */
+.threshold__return {
+  position: relative;
+  z-index: 2;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.125rem;
+  letter-spacing: 0.15em;
+  color: rgba(250, 248, 245, 0.85); /* parchment-ish white */
+  text-decoration: none;
+  padding: 1rem 2rem;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: threshold-breathe 4.5s ease-in-out infinite;
+  transition: color 0.3s ease;
+}
+
+.threshold__return:hover,
+.threshold__return:focus {
+  color: rgba(250, 248, 245, 1);
+  outline: none;
+}
+
+@keyframes threshold-breathe {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Override body background when on threshold page */
+body:has(.threshold) {
+  background-color: #0d1b2a;
+}
+
+/* =============================================
+   The Clearing: inner home, vertical navigation
+   ============================================= */
+
+.clearing {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.clearing__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 680px;
+  width: 100%;
+}
+
+.clearing__name {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: #2C2C2C;
+  margin: 0 0 1.5rem 0;
+}
+
+.clearing__quote {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #8FA4A2;
+  margin: 0 0 3rem 0;
+  max-width: 28rem;
+}
+
+.clearing__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.25rem;
+  margin-bottom: 4rem;
+}
+
+.clearing__link {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #4A6B5A;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.clearing__link:hover,
+.clearing__link:focus {
+  color: #C4956A;
+  outline: none;
+}
+
+.clearing__letter-invite {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
+  color: #4A6B5A;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+.clearing__letter-invite:hover,
+.clearing__letter-invite:focus {
+  color: #C4956A;
+}
+
+.clearing__letter-subtitle {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  color: #8FA4A2;
+  margin: 0.5rem 0 0 0;
+}
+
+/* =============================================
+   Individual Writing Page
+   ============================================= */
+
+.writing {
+  padding: 4rem 1rem 3rem;
+}
+
+.writing__container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.writing__title {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.3;
+}
+
+.writing__date {
+  display: block;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: #8FA4A2;
+  margin-bottom: 2.5rem;
+}
+
+.writing__image {
+  margin: 0 0 2.5rem 0;
+  padding: 0;
+}
+
+.writing__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.writing__content {
+  font-family: 'Lora', Georgia, serif;
+  line-height: 1.75;
+  color: #2C2C2C;
+  margin-bottom: 4rem;
+}
+
+.writing__return {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(143, 164, 162, 0.2);
+}
+
+.writing__return-link {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
+  color: #4A6B5A;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.writing__return-link:hover,
+.writing__return-link:focus {
+  color: #C4956A;
+}
+
+@media (max-width: 640px) {
+  .writing {
+    padding: 2.5rem 1rem 2rem;
+  }
+
+  .writing__title {
+    font-size: 1.5rem;
+  }
+
+  .writing__content {
+    font-size: 1rem;
+  }
+}
+
+/* =============================================
+   The Stone Path: writings list
+   ============================================= */
+
+.stone-path {
+  padding: 3rem 1rem 2rem;
+}
+
+.stone-path__container {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Topic discovery */
+.stone-path__topics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.stone-path__topic {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.8rem;
+  color: #8FA4A2;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.stone-path__topic:hover,
+.stone-path__topic:focus {
+  color: #4A6B5A;
+}
+
+/* Walk deeper pagination */
+.stone-path__deeper {
+  margin-bottom: 2rem;
+}
+
+.stone-path__deeper-link {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: #8FA4A2;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.stone-path__deeper-link:hover,
+.stone-path__deeper-link:focus {
+  color: #4A6B5A;
+}
+
+/* Empty state */
+.stone-path__empty {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: #8FA4A2;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+/* Stones container */
+.stone-path__stones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+/* Individual stone */
+.stone-path__stone {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 1.75rem 2rem;
+  border-radius: 2rem;
+  background: rgba(143, 164, 162, 0.06);
+  width: 100%;
+  max-width: 520px;
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.stone-path__stone:hover,
+.stone-path__stone:focus {
+  background: rgba(143, 164, 162, 0.12);
+}
+
+.stone-path__stone-title {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.stone-path__stone-date {
+  display: block;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.8rem;
+  color: #8FA4A2;
+  margin-bottom: 0.5rem;
+}
+
+.stone-path__stone-opening {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.9rem;
+  color: #2C2C2C;
+  opacity: 0.7;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Return to the clearing */
+.stone-path__return {
+  padding-top: 2rem;
+}
+
+.stone-path__return-link {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
+  color: #4A6B5A;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.stone-path__return-link:hover,
+.stone-path__return-link:focus {
+  color: #C4956A;
+}
+
+/* =============================================
+   Letter Form: Ask Elessan
+   ============================================= */
+
+.letter-form {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto 3rem;
+  padding: 2rem 0;
+}
+
+.letter-form__label {
+  display: block;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #2C2C2C;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.letter-form__textarea {
+  display: block;
+  width: 100%;
+  min-height: 200px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #2C2C2C;
+  background: transparent;
+  border: 1px solid #8FA4A2;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  resize: vertical;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.letter-form__textarea::placeholder {
+  color: #8FA4A2;
+  opacity: 0.7;
+}
+
+.letter-form__textarea:focus {
+  outline: none;
+  border-color: #4A6B5A;
+}
+
+.letter-form__choices {
+  border: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.letter-form__legend {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.8rem;
+  color: #8FA4A2;
+  margin-bottom: 0.75rem;
+  display: block;
+  width: 100%;
+}
+
+.letter-form__choice {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  min-height: 44px;
+  padding: 0.25rem 0;
+}
+
+.letter-form__radio {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #8FA4A2;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: border-color 0.3s ease;
+}
+
+.letter-form__radio:checked {
+  border-color: #4A6B5A;
+}
+
+.letter-form__radio:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4A6B5A;
+}
+
+.letter-form__radio:focus {
+  outline: 2px solid #4A6B5A;
+  outline-offset: 2px;
+}
+
+.letter-form__choice-text {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: #2C2C2C;
+}
+
+.letter-form__email-wrap {
+  margin-bottom: 1.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.letter-form__email-wrap[hidden] {
+  display: none;
+}
+
+.letter-form__email-label {
+  display: block;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.8rem;
+  color: #8FA4A2;
+  margin-bottom: 0.5rem;
+}
+
+.letter-form__email {
+  display: block;
+  width: 100%;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.95rem;
+  color: #2C2C2C;
+  background: transparent;
+  border: 1px solid #8FA4A2;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.letter-form__email::placeholder {
+  color: #8FA4A2;
+  opacity: 0.7;
+}
+
+.letter-form__email:focus {
+  outline: none;
+  border-color: #4A6B5A;
+}
+
+.letter-form__send {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #4A6B5A;
+  background: transparent;
+  border: 1px solid #4A6B5A;
+  border-radius: 0.5rem;
+  padding: 0.75rem 2rem;
+  min-height: 44px;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.letter-form__send:hover,
+.letter-form__send:focus {
+  color: #FAF8F5;
+  background: #4A6B5A;
+  outline: none;
+}
+
+.letter-form__send:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.letter-form__confirmation {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: #8FA4A2;
+  text-align: center;
+  padding: 2rem 0;
+  line-height: 1.6;
+}
+
+.letter-form__error {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #C4956A;
+  margin-top: 1rem;
+}
+
+/* =============================================
+   Stillness: sacred geometry, breathing, Return
+   ============================================= */
+
+.stillness {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #080C10;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+
+/* Override body background for stillness page */
+body:has(.stillness) {
+  background-color: #080C10;
+}
+
+/* Return link in amber, breathing */
+.stillness__return {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  color: #C4956A;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: stillness-breathe 9s ease-in-out infinite;
+  transition: color 0.3s ease;
+}
+
+.stillness__return:hover,
+.stillness__return:focus {
+  color: #E8B87A;
+  outline: none;
+}
+
+/* Sacred geometry image container */
+.stillness__image-wrap {
+  width: 100%;
+  max-width: min(600px, 80vw);
+  position: relative;
+  animation: stillness-breathe 9s ease-in-out infinite;
+}
+
+.stillness__image-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 80px 60px #080C10;
+  pointer-events: none;
+}
+
+.stillness__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Rotating contemplation line */
+.stillness__line {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #8FA4A2;
+  text-align: center;
+  max-width: 24rem;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.7;
+}
+
+/* Breathing animation: CSS-only, 9s cycle */
+@keyframes stillness-breathe {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =============================================
+   404 Page
+   ============================================= */
+
+.four-oh-four {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  text-align: center;
+  gap: 2rem;
+}
+
+.four-oh-four__message {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #2C2C2C;
+  max-width: 24rem;
+  margin: 0;
+}
+
+.four-oh-four__return {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  color: #4A6B5A;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.four-oh-four__return:hover,
+.four-oh-four__return:focus {
+  color: #C4956A;
+}

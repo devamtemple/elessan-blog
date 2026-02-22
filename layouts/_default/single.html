@@ -1,0 +1,10 @@
+{{ define "main" }}
+<main class="min-h-screen flex items-center justify-center px-4">
+  <div class="max-w-prose mx-auto py-16">
+    <h1 class="font-sans text-2xl text-charcoal text-center mb-8">{{ .Title }}</h1>
+    <div class="prose prose-lg mx-auto font-serif leading-relaxed">
+      {{ .Content }}
+    </div>
+  </div>
+</main>
+{{ end }}

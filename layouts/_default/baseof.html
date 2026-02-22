@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+  {{ partial "head.html" . }}
+  {{ $css := resources.Get "css/compiled.css" }}
+  {{ if $css }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  {{ end }}
+</head>
+<body>
+  {{ block "main" . }}{{ end }}
+</body>
+</html>

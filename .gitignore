@@ -1,0 +1,28 @@
+node_modules/
+.env
+.env.local
+*.log
+.DS_Store
+.ralph/last_*
+.ralph/screenshots/
+.ralph/archive/
+.ralph/progress.txt
+.ralph/tool-log.txt
+.ralph/suggested-signs.txt
+.ralph/.preflight_cache
+.ralph/.last_version
+.ralph/.lock
+.backups/
+.claude/settings.json
+.ralph/*.bak
+.ralph/.prd-edit-allowed
+.ralph/.prd_validated
+.ralph/.update_cache
+.hugo_build.lock
+
+# Hugo build output
+public/
+resources/_gen/
+
+# Compiled CSS (generated from Tailwind)
+assets/css/compiled.css

@@ -1,0 +1,75 @@
+{
+  "signs": [
+    {
+      "id": "sign-001",
+      "pattern": "NEVER hardcode AI model names (gpt-4, claude-3, gemini, etc) - always use environment variables or settings",
+      "category": "backend",
+      "learnedFrom": null,
+      "createdAt": "2026-01-20T00:00:00-08:00"
+    },
+    {
+      "id": "sign-002",
+      "pattern": "Use environment variables for all API keys and secrets, never hardcode them",
+      "category": "general",
+      "learnedFrom": null,
+      "createdAt": "2026-01-20T00:00:00-08:00"
+    },
+    {
+      "id": "sign-003",
+      "pattern": "Always handle loading, error, and empty states for async operations",
+      "category": "frontend",
+      "learnedFrom": null,
+      "createdAt": "2026-01-20T00:00:00-08:00"
+    },
+    {
+      "id": "sign-004",
+      "pattern": "ALWAYS transform API responses from snake_case to camelCase at the boundary. Create a transform function: `const user = { userName: data.user_name, createdAt: data.created_at }`. NEVER use snake_case properties directly in TypeScript code like `data.user_name` - always map to camelCase first.",
+      "category": "frontend",
+      "learnedFrom": null,
+      "createdAt": "2026-01-20T00:00:00-08:00"
+    },
+    {
+      "id": "sign-005",
+      "pattern": "Add data-testid attributes to interactive elements for Playwright e2e tests",
+      "category": "frontend",
+      "learnedFrom": null,
+      "createdAt": "2026-01-20T00:00:00-08:00"
+    },
+    {
+      "id": "sign-006",
+      "pattern": "Never use 'any' type in TypeScript - create proper interfaces and types instead",
+      "category": "frontend",
+      "learnedFrom": null,
+      "createdAt": "2026-01-20T00:00:00-08:00"
+    },
+    {
+      "id": "sign-007",
+      "pattern": "When removing or modifying UI elements, grep for related tests and update them - stale tests that check for removed elements will fail",
+      "category": "testing",
+      "learnedFrom": null,
+      "createdAt": "2026-01-25T00:00:00-08:00"
+    },
+    {
+      "id": "sign-008",
+      "pattern": "NEVER use import-checks as test steps (python -c 'from X import Y', hasattr, test -f). These only verify a symbol exists, not that it works. A function that raises on every call still passes an import check. Always use real behavioral tests: curl for API endpoints, pytest with actual function calls, or Playwright for UI.",
+      "category": "testing",
+      "learnedFrom": "Okta SSO PRD review — all 4 backend stories had import-check testSteps that would pass even with completely broken code",
+      "createdAt": "2026-02-17T00:00:00-08:00"
+    },
+    {
+      "id": "sign-009",
+      "pattern": "This is a Hugo static site, NOT a web app with a running server. There is no API, no backend, no frontend dev server needed for verification. Test steps should only check that Hugo builds HTML files correctly (hugo --minify, test -f public/*.html). Do NOT add testUrl, MCP browser checks, Playwright verification, or frontend smoke tests. Do NOT add {config.urls.backend} or {config.urls.frontend} placeholders. The site has no running server during build.",
+      "category": "general",
+      "learnedFrom": "TASK-001 failed 7 times because Ralph kept trying to connect to localhost for frontend smoke tests on a static site that has no server",
+      "createdAt": "2026-02-21T00:00:00-08:00"
+    },
+    {
+      "id": "sign-010",
+      "pattern": "In Hugo templates, ALWAYS use .RelPermalink instead of .Permalink for CSS, JS, and page links. .Permalink generates absolute URLs using baseURL (e.g. https://elessan.ai/css/compiled.css) which breaks local development. .RelPermalink generates relative paths (e.g. /css/compiled.css) that work everywhere. The only exception is RSS feed links which need absolute URLs.",
+      "category": "frontend",
+      "learnedFrom": "TASK-009",
+      "autoPromoted": false,
+      "createdAt": "2026-02-22T13:24:55-08:00"
+    }
+  ]
+}

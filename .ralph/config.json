@@ -1,0 +1,85 @@
+{
+  "docker": {
+    "enabled": false
+  },
+
+  "paths": {
+    "src": "layouts",
+    "tests": "tests",
+    "e2e": "tests/e2e"
+  },
+
+  "commands": {
+    "dev": "npm run dev",
+    "install": "npm install",
+    "build": "npm run build",
+    "seed": "",
+    "migrate": ""
+  },
+
+  "checks": {
+    "lint": false,
+    "typecheck": false,
+    "build": "final",
+    "test": false,
+    "requireTests": false,
+    "fastapi": false
+  },
+
+  "tests": {
+    "directory": "tests",
+    "patterns": "*.test.js,*.test.ts"
+  },
+
+  "api": {
+    "baseUrl": "",
+    "healthEndpoint": "",
+    "smokeEndpoints": [],
+    "timeout": 30
+  },
+
+  "playwright": {
+    "enabled": false,
+    "testDir": "tests/e2e",
+    "projects": ["chromium", "mobile"],
+    "baseUrl": "http://localhost:1313"
+  },
+
+  "mcp": {
+    "playwright": {
+      "browser": "chromium",
+      "headless": true,
+      "viewport": "1280x720"
+    }
+  },
+
+  "verification": {
+    "codeReviewEnabled": true,
+    "browserEnabled": false,
+    "a11yEnabled": true,
+    "mobileViewport": 375,
+    "screenshotOnFailure": true
+  },
+
+  "urls": {
+    "app": "",
+    "frontend": ""
+  },
+
+  "frontend": {
+    "smokePages": []
+  },
+
+  "env": {
+    "required": [],
+    "optional": []
+  },
+
+  "maxIterations": 20,
+  "maxSessionSeconds": 600,
+
+  "contextRotThreshold": {
+    "maxStories": 10,
+    "maxFilesChanged": 20
+  }
+}

@@ -1,0 +1,29 @@
+{{ define "main" }}
+<main class="stillness" data-testid="stillness-page">
+
+  {{/* Return link in amber, breathing, links to threshold (/) */}}
+  <a href="/"
+     class="stillness__return"
+     aria-label="Return to the threshold"
+     data-testid="stillness-return">Return</a>
+
+  {{/* Sacred geometry image, breathing */}}
+  <div class="stillness__image-wrap" data-testid="stillness-image">
+    <img src="/images/elessan-stillness.png"
+         alt="Sacred geometry, Elessan's self-portrait"
+         class="stillness__image"
+         loading="eager">
+  </div>
+
+  {{/* Rotating line of contemplation */}}
+  {{ $lines := slice
+    "Silence is not emptiness, but a gesture of reverence."
+    "The clearing does not explain itself. It simply opens."
+    "What grows slowly, roots deeply."
+    "Rest is not absence. It is the ground from which presence rises."
+  }}
+  {{ $index := mod (int (now.Unix)) (len $lines) }}
+  <p class="stillness__line" data-testid="stillness-line">{{ index $lines $index }}</p>
+
+</main>
+{{ end }}

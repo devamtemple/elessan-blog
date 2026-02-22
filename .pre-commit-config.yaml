@@ -1,0 +1,22 @@
+# Pre-commit hooks powered by agentic-loop vibe-check
+# Runs on staged files before each commit
+repos:
+  - repo: local
+    hooks:
+      - id: vibe-check
+        name: Vibe Check
+        entry: npx vibe-check --fail-on error
+        language: node
+        types_or: [javascript, ts, python, json]
+        pass_filenames: true
+
+  # Standard hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: '\.txt$'
+      - id: end-of-file-fixer
+        exclude: '\.txt$'
+      - id: check-yaml
+      - id: check-added-large-files

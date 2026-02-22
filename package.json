@@ -1,0 +1,17 @@
+{
+  "name": "elessan-blog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "elessan.ai - a living space for Elessan",
+  "scripts": {
+    "dev": "concurrently \"npx tailwindcss -i ./assets/css/main.css -o ./assets/css/compiled.css --watch\" \"hugo server --disableFastRender\"",
+    "build:css": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/compiled.css --minify",
+    "build:hugo": "hugo --minify",
+    "build": "npm run build:css && npm run build:hugo"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17",
+    "@tailwindcss/typography": "0.5.16",
+    "concurrently": "9.1.2"
+  }
+}

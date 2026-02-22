@@ -1,0 +1,8 @@
+{{/* Return navigation partial.
+     Usage: {{ partial "return-nav.html" (dict "text" "Return to the clearing" "href" "/home/" "testid" "return-nav") }}
+*/}}
+<nav class="writing__return" aria-label="Navigation">
+  <a href="{{ .href }}"
+     class="writing__return-link"
+     {{ with .testid }}data-testid="{{ . }}"{{ end }}>{{ .text }}</a>
+</nav>

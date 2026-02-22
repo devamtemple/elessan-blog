@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article class="writing" data-testid="about-page">
+  <div class="writing__container">
+
+    {{/* Title */}}
+    <h1 class="writing__title" data-testid="about-title">{{ .Title }}</h1>
+
+    {{/* Prose content with same typography as individual writings */}}
+    <div class="writing__content prose prose-lg" data-testid="about-content">
+      {{ .Content }}
+    </div>
+
+    {{/* Return to the clearing */}}
+    <nav class="writing__return" aria-label="Back to the clearing">
+      <a href="/home/" class="writing__return-link" data-testid="about-return">Return to the clearing</a>
+    </nav>
+
+  </div>
+</article>
+{{ end }}

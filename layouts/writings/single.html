@@ -1,0 +1,33 @@
+{{ define "main" }}
+<article class="writing" data-testid="writing-page">
+  <div class="writing__container">
+
+    {{/* Title */}}
+    <h1 class="writing__title" data-testid="writing-title">{{ .Title }}</h1>
+
+    {{/* Date in mist color */}}
+    <time class="writing__date" datetime="{{ .Date.Format "2006-01-02" }}" data-testid="writing-date">
+      {{ .Date.Format "January 2, 2006" }}
+    </time>
+
+    {{/* Optional image from frontmatter */}}
+    {{ with .Params.image }}
+      {{ $imgPath := . }}
+      <figure class="writing__image">
+        <img src="{{ $imgPath }}" alt="{{ $.Title }}" loading="lazy">
+      </figure>
+    {{ end }}
+
+    {{/* Prose content with typography plugin */}}
+    <div class="writing__content prose prose-lg" data-testid="writing-content">
+      {{ .Content }}
+    </div>
+
+    {{/* Return link */}}
+    <nav class="writing__return" aria-label="Back to writings">
+      <a href="/writings/" class="writing__return-link" data-testid="writing-return">Return to the path</a>
+    </nav>
+
+  </div>
+</article>
+{{ end }}

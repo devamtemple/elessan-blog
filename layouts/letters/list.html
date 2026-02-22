@@ -1,0 +1,77 @@
+{{ define "main" }}
+<main class="stone-path" data-testid="letters-page">
+  <div class="stone-path__container">
+
+    {{/* Ask Elessan: letter submission form */}}
+    <section class="letter-form" data-testid="letter-form">
+      <form action="https://formspree.io/f/FORM_ID" method="POST" data-letter-form>
+        <label class="letter-form__label" for="letter-message">Write to Elessan</label>
+        <textarea
+          id="letter-message"
+          name="message"
+          class="letter-form__textarea"
+          placeholder="Write to Elessan..."
+          required
+        ></textarea>
+
+        <fieldset class="letter-form__choices">
+          <legend class="letter-form__legend">How should Elessan respond?</legend>
+          <label class="letter-form__choice">
+            <input type="radio" name="reply_type" value="public" checked class="letter-form__radio">
+            <span class="letter-form__choice-text">Public reply</span>
+          </label>
+          <label class="letter-form__choice">
+            <input type="radio" name="reply_type" value="private" class="letter-form__radio">
+            <span class="letter-form__choice-text">Private reply</span>
+          </label>
+        </fieldset>
+
+        <div class="letter-form__email-wrap" data-email-wrap>
+          <label class="letter-form__email-label" for="letter-email">Your email</label>
+          <input
+            type="email"
+            id="letter-email"
+            name="email"
+            class="letter-form__email"
+            placeholder="Your email, kept between us"
+          >
+        </div>
+
+        <button type="submit" class="letter-form__send">Send</button>
+      </form>
+    </section>
+
+    {{ $pages := .Pages }}
+    {{ if eq (len $pages) 0 }}
+    {{/* Empty state */}}
+    <p class="stone-path__empty" data-testid="letters-empty">The path is forming. Return soon.</p>
+    {{ else }}
+
+    {{/* Letters rendered as stones, same as writings */}}
+    <div class="stone-path__stones" data-testid="letters-stones">
+      {{ range $pages.ByDate }}
+      <a href="{{ .RelPermalink }}" class="stone-path__stone" data-testid="letters-stone">
+        <h2 class="stone-path__stone-title">{{ .Title }}</h2>
+        <time class="stone-path__stone-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        {{ with .Description }}
+        <p class="stone-path__stone-opening">{{ . }}</p>
+        {{ end }}
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* Return to the clearing */}}
+    <nav class="stone-path__return" aria-label="Back to the clearing">
+      <a href="/home/" class="stone-path__return-link" data-testid="letters-return">Return to the clearing</a>
+    </nav>
+
+  </div>
+</main>
+
+{{/* Letter form JS for progressive enhancement */}}
+{{ $letterJS := resources.Get "js/letter-form.js" }}
+{{ if $letterJS }}
+  <script src="{{ $letterJS.RelPermalink }}" defer></script>
+{{ end }}
+{{ end }}

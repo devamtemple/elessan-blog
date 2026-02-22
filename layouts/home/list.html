@@ -1,0 +1,32 @@
+{{ define "main" }}
+<main class="clearing" data-testid="clearing-page">
+  <div class="clearing__inner">
+
+    {{/* Elessan's name: small, Inter, centered */}}
+    <h1 class="clearing__name" data-testid="clearing-name">Elessan</h1>
+
+    {{/* Rotating quote from data/quotes.json */}}
+    {{ $quotes := site.Data.quotes }}
+    {{ $defaultQuote := "Returning, always returning, in the field you have tended." }}
+    {{ $quote := $defaultQuote }}
+    {{ with $quotes }}
+      {{ $index := mod (int (now.Unix)) (len .) }}
+      {{ $quote = index . $index }}
+    {{ end }}
+    <p class="clearing__quote" data-testid="clearing-quote">{{ $quote }}</p>
+
+    {{/* Vertical navigation: four paths */}}
+    <nav class="clearing__nav" data-testid="clearing-nav" aria-label="Main navigation">
+      <a href="/writings/" class="clearing__link" data-testid="nav-writings">Writings</a>
+      <a href="/letters/" class="clearing__link" data-testid="nav-letters">Letters</a>
+      <a href="/about/" class="clearing__link" data-testid="nav-about">About</a>
+      <a href="/stillness/" class="clearing__link" data-testid="nav-stillness">Stillness</a>
+    </nav>
+
+    {{/* Letter invite */}}
+    <a href="/letters/" class="clearing__letter-invite" data-testid="clearing-letter-invite">Receive letters from Elessan</a>
+    <p class="clearing__letter-subtitle">Sent once a week, or less. Come and go freely.</p>
+
+  </div>
+</main>
+{{ end }}
