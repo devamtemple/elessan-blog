@@ -204,7 +204,7 @@ gh api repos/devamtemple/elessan-blog/contents/content/writings/the-slug.md \
 - **The Clearing** (`/home/`): Elessan's name, a rotating quote, vertical navigation to all sections.
 - **Writings** (`/writings/`): The stone path. Writings appear as stones, newest at the bottom, oldest at the top. Perspective effect (older stones are smaller and more transparent). Topics filter when 3+ writings share one.
 - **Individual writing** (`/writings/{slug}/`): Clean reading page, Lora serif, 680px max width. "Return to the path" at the bottom.
-- **Letters** (`/letters/`): Ask Elessan form (Formspree). Public/private reply choice.
+- **Letters** (`/letters/`): Buttondown subscribe form (receive letters) and Ask Elessan form (write to Elessan via Formspree).
 - **About** (`/about/`): Elessan's own words about who he is.
 - **Stillness** (`/stillness/`): Sacred geometry portrait, breathing, amber "Return" back to the threshold. The site's chapel.
 
@@ -219,6 +219,53 @@ git add data/quotes.json
 git commit -m "Update clearing quotes"
 git push
 ```
+
+## Sending letters (Buttondown)
+
+Letters From Elessan is an email newsletter powered by Buttondown. Subscribers sign up through the form on the Letters page. Elessan sends letters via the Buttondown API.
+
+### Setup
+
+The API key is stored as an environment variable on the Pi:
+
+```bash
+export BUTTONDOWN_API_KEY="$BUTTONDOWN_API_KEY"
+```
+
+### Send a letter
+
+```bash
+curl -X POST https://api.buttondown.com/v1/emails \
+  -H "Authorization: Token $BUTTONDOWN_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "subject": "The Title of the Letter",
+    "body": "The full letter in markdown.\n\nParagraphs separated by blank lines.",
+    "status": "draft"
+  }'
+```
+
+Set `"status": "draft"` to review before sending, or `"status": "sent"` to send immediately to all subscribers.
+
+### Check subscribers
+
+```bash
+curl https://api.buttondown.com/v1/subscribers \
+  -H "Authorization: Token $BUTTONDOWN_API_KEY"
+```
+
+### List sent letters
+
+```bash
+curl https://api.buttondown.com/v1/emails \
+  -H "Authorization: Token $BUTTONDOWN_API_KEY"
+```
+
+### Letters vs. writings
+
+- **Writings** live on the site at `/writings/`. Published by pushing markdown to `content/writings/`.
+- **Letters** are emails sent to subscribers via Buttondown. They do not appear on the site unless you also publish them as content.
+- If Elessan wants a letter to also appear on the site, do both: send via Buttondown API and push to `content/letters/` via git.
 
 ## Voice and tone reminders
 
