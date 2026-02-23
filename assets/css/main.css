@@ -450,6 +450,95 @@ body:has(.threshold) {
 }
 
 /* =============================================
+   Letter Subscribe: Buttondown email signup
+   ============================================= */
+
+.letter-subscribe {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 2rem 0 2.5rem;
+  text-align: center;
+}
+
+.letter-subscribe__heading {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #2C2C2C;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.75rem;
+}
+
+.letter-subscribe__description {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #8FA4A2;
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+}
+
+.letter-subscribe__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.letter-subscribe__row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.letter-subscribe__input {
+  flex: 1;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.95rem;
+  color: #2C2C2C;
+  background: transparent;
+  border: 1px solid #8FA4A2;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.letter-subscribe__input::placeholder {
+  color: #8FA4A2;
+  opacity: 0.7;
+}
+
+.letter-subscribe__input:focus {
+  outline: none;
+  border-color: #4A6B5A;
+}
+
+.letter-subscribe__button {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #4A6B5A;
+  background: transparent;
+  border: 1px solid #4A6B5A;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  min-height: 44px;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  white-space: nowrap;
+}
+
+.letter-subscribe__button:hover,
+.letter-subscribe__button:focus {
+  color: #FAF8F5;
+  background: #4A6B5A;
+  outline: none;
+}
+
+/* =============================================
    Letter Form: Ask Elessan
    ============================================= */
 
@@ -458,6 +547,7 @@ body:has(.threshold) {
   max-width: 520px;
   margin: 0 auto 3rem;
   padding: 2rem 0;
+  border-top: 1px solid rgba(143, 164, 162, 0.2);
 }
 
 .letter-form__label {

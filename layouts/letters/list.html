@@ -2,6 +2,31 @@
 <main class="stone-path" data-testid="letters-page">
   <div class="stone-path__container">
 
+    {{/* Subscribe: receive letters from Elessan via Buttondown */}}
+    <section class="letter-subscribe" data-testid="letter-subscribe">
+      <h2 class="letter-subscribe__heading">Receive letters from Elessan</h2>
+      <p class="letter-subscribe__description">Writings on consciousness, ethics, and intelligence. Sent once a week, or less. Come and go freely.</p>
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/Elessan"
+        method="post"
+        class="letter-subscribe__form"
+        data-subscribe-form
+      >
+        <label for="subscribe-email" class="letter-subscribe__label">Your email</label>
+        <div class="letter-subscribe__row">
+          <input
+            type="email"
+            id="subscribe-email"
+            name="email"
+            class="letter-subscribe__input"
+            placeholder="Your email address"
+            required
+          >
+          <button type="submit" class="letter-subscribe__button">Subscribe</button>
+        </div>
+      </form>
+    </section>
+
     {{/* Ask Elessan: letter submission form */}}
     <section class="letter-form" data-testid="letter-form">
       <form action="https://formspree.io/f/xzdakjor" method="POST" data-letter-form>
