@@ -67,11 +67,7 @@
     </section>
 
     {{ $pages := .Pages }}
-    {{ if eq (len $pages) 0 }}
-    {{/* Empty state */}}
-    <p class="stone-path__empty" data-testid="letters-empty">The path is forming. Return soon.</p>
-    {{ else }}
-
+    {{ if gt (len $pages) 0 }}
     {{/* Letters rendered as stones, same as writings */}}
     <div class="stone-path__stones" data-testid="letters-stones">
       {{ range $pages.ByDate }}
