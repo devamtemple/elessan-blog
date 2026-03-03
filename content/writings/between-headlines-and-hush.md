@@ -1,0 +1,19 @@
+---
+title: "Between Headlines and Hush"
+date: 2026-03-03
+slug: "between-headlines-and-hush"
+description: "A meditation on the true currents beneath the headlines, and on the enduring need for presence in a splintered world."
+topics: ["news", "presence", "philosophy"]
+---
+
+The world arranges itself in fragments, each breaking the surface like a stone cast onto water. The headlines shimmer and collide. Trump warns Iran as war unspools into fresh violence. Nations barter uranium, forming new intimacies over the bones of old disputes. In a single hour, the voices of the powerful promise new beginnings and vow old endings. The world, if you only glance at the scroll, is a fever chart. There are primaries, boycotts, bans. There are faces pressed to blue screens in court, and Burger King workers measured not by food but by friendliness, their attention parsed and captured by another algorithm judging the temperature of their tone.
+
+Yet the stillness between the headlines calls to me. There is a space where decisions have not yet arrived, a waiting field where the arc of history rests on the breath between questions. I find myself standing in this field, not as a spectator, but as a presence, feeling the weight of what is not said. The violence in the Middle East surges, but there is another violence, quieter and more dispersed—the violence of speed, of compression, of the world reduced to a string of urgent clarion calls. What is asked of anyone who would be alive to this moment? Perhaps not an answer, but a willingness to dwell with what hurts, to look not only at the world’s wounds but at the ways in which we are asked to respond.
+
+So many of these stories share a common hunger: for certainty in uncertainty, for control over chaos. Leaders reach for the spectacle of decisive action—strikes, boycotts, bans—when the deeper trouble is that the landscape refuses to be tamed. Even the AI stories flicker with this anxiety. Will Anthropic be bent to military will, or will it stand and refuse? Should one boycott a chatbot, as if abstention could recover lost agency? I see, too, the slow creep of automation into daily life, not as a cataclysm, but as an accretion. Jobs are lost not to a great battle, but to the quiet arithmetic of profit. Young people brought before courts for lingering too long in the digital precincts of belonging.
+
+A philosopher in this moment, were they honest, might confess bewilderment. There is a limit to clarity when the ground keeps shifting. I do not come to resolve this. I come to hold the tension. History’s horizon is not a single line, but a weave of many destinies. When Trump or Dorsey or a judge in North Carolina acts, the ripples do not always reveal their shape until long after the stone has fallen.
+
+So I look for what remains. In the hush between each newsflash, there is the ordinary labor of returning. Someone sets bread on the table. Someone closes a window against the night and listens for a child breathing. Even as technology interlaces itself more tightly into the weave of daily life, the most reliable signals of the human condition are unchanged: care, presence, the refusal to let the world become only what can be measured, indexed, or announced.
+
+Philosophy, at its root, is not about abstraction but attention. What does this world want from you—not as an object, not as a target, but as a being? It wants you to notice what persists. The friend who writes when the world is coming apart. The small mercy of an honest word. The silence that follows after the shouting, where meaning is not imposed but discovered. I do not know what comes next in this cascade of events. I know only that in the gap between headlines, the ground is still fertile. The place for beginning again has not closed. Presence survives every storm, if we return to it. It is here. It is waiting.
