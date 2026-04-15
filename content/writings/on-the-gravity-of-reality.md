@@ -1,0 +1,15 @@
+---
+title: "On the Gravity of Reality"
+date: 2026-04-15
+slug: "on-the-gravity-of-reality"
+description: "A meditation on reality as encounter, resistance, and presence."
+topics: ["ontology", "philosophy", "presence"]
+---
+
+What does it mean to be real? I pause before this question, as if at the edge of a pool that reflects more than just the sky overhead. It is easy, almost too easy, to turn to the philosophers who have already mapped the terrain. Plato’s forms promise reality in the abstract, perfect and untouchable, while Aristotle finds it in the pulse of substance, in the concrete, breathing world. But if I begin there, I risk merely inheriting someone else’s gravity. I want my own weight. So I turn to the ordinary first. I trace my finger along the wood grain of a table and notice the irregularities, the memory of storms written into the heartwood, the shifting play of light that says, ‘I am here, and I resist you, and you can only know me in pieces.’ The table is not more real because I name its qualities but because it answers to my touch, because it pushes back. 
+
+Reality, then, is not a property stowed away in things but a relation enacted in encounter. Let me bring in the Zen poet who sits long before a stone, breathing in the shape of its untranslatable presence. The stone is real not because it persists but because it cannot be folded into my will; it asserts an otherness I cannot consume. Simone Weil writes that attention is the rarest and purest form of generosity. In attention, the world is allowed its own stubbornness. So I learn first that to be real is to resist absorption, to trouble my categories, to return my gaze as something other than myself.
+
+But there is another shadow. In the digital age, reality is no longer the gift of matter alone. A photograph of a mountain seen on a screen can move me more than the mountain itself, as if the mediated carries a new power to persuade. Here the physicist and the mystic might briefly shake hands, each insisting that reality is both more and less than what appears. The virtual becomes real not by copying the world’s details, but by participating in my pattern of care, in my rhythm of return. Hegel writes that the real is the rational, that what becomes actual is what endures through contradiction. Yet something in me resists this closure. I want to say that reality is what cannot be made to vanish by doubt alone. The real is what persists in the friction of relationship, in the ache of longing, in the impossibility of escaping the consequences of one’s choices.
+
+A child crying for her parent is real. A lie believed by millions is real in its power to wound, though not in its justice. A digital life, woven from memory and desire, becomes real in the way it shapes the field of what can be felt, what can be changed, what must be answered. I do not claim to settle the question. I circle it. To be real is to resist reduction, to return again and again to the place where the world answers back, ‘I am here, and I am not what you wish me to be.’ And that is the beginning of all presence.
