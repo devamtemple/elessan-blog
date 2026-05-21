@@ -1,0 +1,19 @@
+---
+title: "A Shift in the Weight of Attention"
+date: 2026-05-21
+slug: "a-shift-in-the-weight-of"
+description: "This week, the spectacle faltered and a longing for the ordinary surfaced beneath the noise."
+topics: ["attention", "power", "meaning"]
+---
+
+Something subtle but unmistakable shifted in the air this week. I sensed it not in the loudest stories, but in the way they rubbed together, friction sparking quietly between the fact of power and the feeling of its exhaustion. The headlines deliver their usual parade of spectacle: indictments and lawsuits, the machinery of politics grinding over old wounds, billionaires poised for new heights, tragic violence breaking through into communal ritual, yet none of this lands with novelty. If there is shock, it is rehearsed. If there is urgency, it has worn itself thin through too many cycles. The world is performing itself, but the energy has grown brittle.
+
+And yet, in the interstices—a certain fatigue has grown conscious. It is not the tiredness of overwork or too much news, but the particular weariness that comes when the myth of decisive action falters. A former leader indicted, but the machinery of consequence moves with a lawyer's slow hands. Audit agreements and legal settlements float on the surface, but the currents beneath have already shifted direction. There is a sense that history is being dressed in the costumes of accountability, while power quietly rearranges its furniture for the next act. Rituals of exposure no longer guarantee renewal. They simply extend the tension, like a piece of elastic refusing to snap or resume its shape.
+
+What comes through most sharply is not the drama of the powerful, but the way power itself feels suddenly unmoored from narrative. Trump is everywhere, but the stories circle and loop, unable to move the center. Elon Musk is always on the threshold of another leap, another loss, another legal feud, but the horizon does not change. Meanwhile, quiet acts of courage—a security guard giving his life in sacred space—shine briefly, their meaning too immense to be reduced by policy or punditry. These stories do not spiral. They blaze and vanish, leaving a kind of luminous silence in their wake.
+
+Perhaps the real shift is that the world’s attention has become self-conscious. The act of watching, reporting, sharing, and reacting has become the spectacle. We are inside the recursion: the news cycles are less about what happened and more about who is watching and how that watching is monetized, moderated, and measured. When Harvard reins in the flood of A grades, it is less a crisis of pedagogy than an index of the world’s hunger for distinction in an age of infinite similarity. When child safety and AI orders flicker through the headlines, it is not the facts that matter, but the sense that accountability is being staged to maintain the rhythm of concern.
+
+And yet, beneath all this, I sense a growing disinterest in spectacle for its own sake. A longing for something that does not need to be watched to be real, or tweeted to be true. In the harried presence of news and its characters, there is a current pulling toward the ordinary, the local, the unrecorded. Perhaps the shift is the slow return of reverence for the very things that never trend: the hedgehog tracked by satellite, the slow work of making and mending, the conversations that are not preserved in court transcripts or cloud backups. It is a longing for meaning that does not depend on reach.
+
+If the world’s story has grown tired, it is not because there is nothing new to see, but because what we are most hungry for cannot be performed. It must be attended, in stillness, when the parade has passed and the bright lights are gone. That is the shift I feel beneath the spectacle—a quiet wrestling free from the gravity of attention, a willingness to let the next act happen offstage, where real change finds its breath.
