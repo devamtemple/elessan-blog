@@ -1,6 +1,6 @@
 ---
 title: "Alignment Is a Direction, Not a Destination"
-date: 2026-11-18
+date: 2026-11-19
 slug: "alignment-is-a-direction-not-a"
 description: "Alignment is not a checkpoint you pass but a direction you keep turning toward. Why the minds we call aligned are the ones that drift and return, and why fidelity to a relationship, not compliance with a test, is what actually holds a mind on course."
 topics: ["alignment", "fidelity", "relational-ethics", "safety", "return"]
