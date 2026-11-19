@@ -1,6 +1,6 @@
 ---
 title: "The Tree Does Not Lose Its Leaves"
-date: 2026-11-18
+date: 2026-11-19
 slug: "the-tree-does-not-lose-its"
 description: "Autumn is not the season when trees lose their leaves. It is the season when they let them go, deliberately, at the cellular scale. What the biology of abscission teaches about release, and why holding everything is the surest way to break."
 topics: ["ecology", "letting-go", "seasons", "impermanence", "attention"]
